@@ -2,30 +2,24 @@
 #Xee Ho Vang
 #Chapter 4 script
 
-#view partition table
-parted -l
-
 #view current mounted filesystem staues
-mount 
+mount | less 
 
 #seeing debugg messages
 sudo dmesg | less
 
 #view Universally Unique Identify  (UUID)
+sudo blkid
 
 #view the size and utilization fo the currently mounted filesystems
 df
 
 #check for errors without modifying anything
-fsck -n /dev/sdb1
+sudo fsck -n /dev/sda
 
-#linking two files to the same location
-mkdir dir_1
-mkdir dir_2
-echo a > dir_1/file_1
-echo b > dir_1/file_2
-echo c > dir_2/file_3
-ln dir_1/file_1 dir_2/file_3
+#create a symbolic link and point file1 to link1 and verify it
+ln -s file_1 link1
+ls -l file1 link1
 
 #view inode status
 ls -i
