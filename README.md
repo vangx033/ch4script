@@ -3,10 +3,10 @@
 #Chapter 4 script
 
 #view current mounted filesystem staues
-mount | less 
+mount | less | pr 
 
 #seeing debugg messages
-sudo dmesg | less
+sudo dmesg | less |pr
 
 #view Universally Unique Identify  (UUID)
 sudo blkid
